@@ -1,0 +1,39 @@
+def format_tags(tags):
+    """
+    Format the list of tag names into 3 columns for display.
+
+    Arguments:
+        tags(list): a list of tag name strings
+
+    Returns:
+        string: a single string that will display the tags in 3 columns
+    """
+    tag = []
+    i = 0
+    for item in tags:
+        x = 0
+        val = (24-len(item)) 
+        tag.append(item)
+        #print(val)
+        while x < val:
+            tag.append("")
+            x += 1
+        i += 1
+        if i % 3 == 0:
+            tag.append("\n")
+    string = ' '.join(map(str, tag))
+    print(string)
+
+
+""" it should look like this
+tags = ["a", "b", "c", "d"]
+    format_tags(tags) == (
+        "a                        b                        c                        \n"
+        "d                        \n"
+    )
+but when I run it this is what outputs
+format_tags(tags) == (
+        "a                        b                        c                        \n"
+        " d                        \n"
+    )
+"""
